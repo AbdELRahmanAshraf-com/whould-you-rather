@@ -3,7 +3,15 @@ import { connect } from "react-redux"
 
 class Result extends Component {
   render() {
-    const { userData, question, value } = this.props
+    const { userData, question, value, id } = this.props
+    if (id === null) {
+      return (
+        <div style={{ margin: "auto", textAlign: "center" }}>
+          <h1>Error 404</h1>
+          <h2>Id entered is Invalid</h2>
+        </div>
+      )
+    }
     const oOneVotes = question.optionOne.votes.length
     const oTwoVotes = question.optionTwo.votes.length
     const sumVotes = oOneVotes + oTwoVotes
@@ -64,6 +72,11 @@ class Result extends Component {
 
 const mapStateToProps = ({ questions, users, authedUser }, props) => {
   const { id } = props.match.params
+  if (questions[id] == null) {
+    return {
+      id: null,
+    }
+  }
   const userData = users[questions[id].author]
   const question = questions[id]
   const answered = Object.keys(users[authedUser].answers).includes(question.id)

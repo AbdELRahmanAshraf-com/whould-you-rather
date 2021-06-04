@@ -14,8 +14,8 @@ class NavBar extends Component {
       <nav className={!this.props.loading ? "active" : null}>
         <div className='navigators'>
           <Link to='/'>Home</Link>
-          <Link to='/new_question'>New Question</Link>
-          <Link to='/board'>Leader Board</Link>
+          <Link to='/add'>New Question</Link>
+          <Link to='/leaderboard'>Leader Board</Link>
         </div>
         <div className='info'>
           <span>Hello,{users[authedUser].name}</span>

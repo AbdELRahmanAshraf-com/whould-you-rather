@@ -1,14 +1,13 @@
 import React, { Component } from "react"
 import Question from "./Question"
 import { connect } from "react-redux"
-import { _getQuestions } from "../utils/_DATA"
 
 class Switcher extends Component {
   state = {
     isAnswered: false,
   }
   render() {
-    const { unAnsweredQuestions, answeredQuestions, questions } = this.props
+    const { unAnsweredQuestions, answeredQuestions } = this.props
     return (
       <div className='switcher-comp'>
         <div className='switcher'>

@@ -8,8 +8,12 @@ class New_Question extends Component {
     const optionOne = e.target.elements.optionOne.value
     const optionTwo = e.target.elements.optionTwo.value
     const { handleAddQuestion, authedUser, history } = this.props
-    handleAddQuestion(optionOne, optionTwo, authedUser)
-    history.push("/")
+    if (optionOne.trim().length > 0 && optionTwo.trim().length > 0) {
+      handleAddQuestion(optionOne, optionTwo, authedUser)
+      history.push("/")
+    } else {
+      alert("Please Enter Valid Options")
+    }
   }
   render() {
     return (

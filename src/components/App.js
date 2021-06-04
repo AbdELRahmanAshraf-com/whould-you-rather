@@ -5,7 +5,6 @@ import LoadingBar from "react-redux-loading"
 import NavBar from "./NavBar"
 import Answer from "./Answer"
 import Result from "./Result"
-import Score from "./Score"
 import New_Question from "./New_Question"
 import { handleInitialData } from "../actions/shared"
 import { connect } from "react-redux"
@@ -34,9 +33,8 @@ class App extends Component {
                   <Route path='/' exact component={Switcher} />
                   <Route path='/answer/:id' component={Result} />
                   <Route path='/question/:id' component={Answer} />
-                  <Route path='/new_question' component={New_Question} />
-                  <Route path='/board' component={Board} />
-                  <Route path='/leader_board' component={Score} />
+                  <Route path='/add' component={New_Question} />
+                  <Route path='/leaderboard' component={Board} />
                 </div>
               )}
             </div>
