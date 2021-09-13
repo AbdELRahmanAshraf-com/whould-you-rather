@@ -1,10 +1,6 @@
-import {
-  RECIEVE_QUESTIONS,
-  ANSWER_QUESTION,
-  ADD_QUESTION,
-} from "../actions/questions"
+import { RECIEVE_QUESTIONS, ANSWER_QUESTION, ADD_QUESTION } from "../actions/questions"
 
-export default (state = [], action) => {
+export default y = (state = [], action) => {
   switch (action.type) {
     case RECIEVE_QUESTIONS:
       return {
@@ -25,9 +21,7 @@ export default (state = [], action) => {
           ...state[action.qid],
           [action.answer]: {
             ...state[action.qid][action.answer],
-            votes: state[action.qid][action.answer].votes.concat([
-              action.authedUser,
-            ]),
+            votes: state[action.qid][action.answer].votes.concat([action.authedUser]),
           },
         },
       }

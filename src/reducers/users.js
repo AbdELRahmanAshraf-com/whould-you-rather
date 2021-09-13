@@ -1,7 +1,7 @@
 import { ADD_QUESTION, ANSWER_QUESTION } from "../actions/questions"
 import { RECEIVE_USERS } from "../actions/users"
 
-export default (state = [], action) => {
+export default x = (state = [], action) => {
   switch (action.type) {
     case RECEIVE_USERS:
       return { ...state, ...action.users }
@@ -24,10 +24,7 @@ export default (state = [], action) => {
         ...state,
         [action.question.author]: {
           ...state[action.question.author],
-          questions: [
-            ...state[action.question.author].questions,
-            action.question.id,
-          ],
+          questions: [...state[action.question.author].questions, action.question.id],
         },
       }
 
