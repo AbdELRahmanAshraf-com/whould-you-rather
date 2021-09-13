@@ -1,6 +1,6 @@
 import { RECIEVE_QUESTIONS, ANSWER_QUESTION, ADD_QUESTION } from "../actions/questions"
 
-export default y = (state = [], action) => {
+export default (state = [], action) => {
   switch (action.type) {
     case RECIEVE_QUESTIONS:
       return {
